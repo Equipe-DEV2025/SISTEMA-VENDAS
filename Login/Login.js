@@ -13,7 +13,7 @@ function login() {
     firebase.auth().signInWithEmailAndPassword(form.email().value, form.password().value)
     .then(Response => {
         hideLoading();
-        window.location.href = "pages/Home/Home.html";
+        window.location.href = "Home/Home.html";
     }).catch(error => {
         hideLoading();
         console.error('Erro ao logar usuário:', error);
@@ -30,7 +30,7 @@ function getErrorMsg(error) {
 
 function register() {
     showLoading();
-    window.location.href = "pages/Register/Register.html";
+    window.location.href = "Register/Register.html";
 }
 
 function recPassword() {
@@ -88,4 +88,5 @@ const form = {
     passwordRequiredError: () => document.getElementById("password-required-error"),
     entrar: () => document.getElementById("entrar"),
     recSenha: () => document.getElementById('rec-senha'),
+
 }
