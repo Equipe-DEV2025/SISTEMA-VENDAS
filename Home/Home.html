@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sistema de Agenda</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+    <div class="welcome-container" aria-label="Boas vindas e descrição do sistema">
+        <p class="welcome"><strong>Bem-vindo, pedrof!</strong></p>
+        <a href="#" class="subtext">Sistema de Agenda Pessoal</a>
+    </div>
+    <button class="btn-exit" type="button" aria-label="Sair do sistema">Sair</button>
+
+</header>
+
+<main>
+    <h2>Sistema de Agenda</h2>
+    <div class="btn-group" role="group" aria-label="Ações principais">
+        <button class="btn btn-calendar icon-calendar" disabled aria-disabled="true">Reagendar</button>
+        <button id="btn-add-company" class="btn btn-add icon-plus" aria-controls="add-company-container" aria-expanded="false">Adicionar Empresa</button>
+        <button id="btn-add-segment" class="btn btn-add icon-plus" aria-controls="add-segment-container" aria-expanded="false">Cadastro de Seguimento</button>
+        <button class="btn btn-edit icon-edit">Ficha Cadastral</button>
+    </div>
+
+    <div class="ordenacao" aria-label="Ordenação Listagem">
+        <b>Ordenação Listagem:</b>
+        <label><input type="radio" name="ordenacao" value="codigo" checked /> Código</label>
+        <label><input type="radio" name="ordenacao" value="cliente" /> Cliente</label>
+        <label><input type="radio" name="ordenacao" value="data" /> Data</label>
+    </div>
+
+    <div class="content">
+        <section class="table-container" aria-label="Registros da Agenda">
+
+            <h3 class="table-header">Registros da Agenda</h3>
+            <div class="search-box">
+                <input id="search-input" type="search" placeholder="Pesquisar registros..." aria-label="Pesquisar registros" />
+            </div>
+
+            <table id="records-table" aria-describedby="table-desc">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Fantasia</th>
+                        <th>WhatsApp</th>
+                        <th>Contato</th>
+                        <th>Agendamento</th>
+                        <th>Prior.</th>
+                        <th>Vendedor</th>
+                        <th>Segmentos</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+
+            <!-- Container para formulário adicionar empresa -->
+            <div id="add-company-container"></div>
+            <!-- Container para formulário adicionar segmento -->
+            <div id="add-segment-container"></div>
+        </section>
+
+        <aside class="sidebar" aria-label="Colunas laterais">
+            <section class="card" aria-labelledby="registros-anotacoes-title">
+                <h3 id="registros-anotacoes-title">Registros e Anotações <button class="add-btn" aria-label="Adicionar Registro">+</button></h3>
+                <p class="placeholder">Selecione um registro para ver os dados</p>
+            </section>
+
+            <section class="card" aria-labelledby="anotacoes-gerais-title">
+                <h3 id="anotacoes-gerais-title">Anotações Gerais</h3>
+                <p class="placeholder">Selecione um registro para ver as anotações</p>
+            </section>
+        </aside>
+    </div>
+</main>
+    
+<script src="script.js"></script>
+</body>
+</html>
